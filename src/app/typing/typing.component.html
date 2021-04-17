@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+      <h1>Typing Challenge</h1>
+      <hr>
+      <span [class]="compare(text, enteredText[i])" *ngFor="let text of randomText.split(''); let i = index;"
+        style="font-size:20px;">{{ text }}</span>
+      <div class="form-group flex-column text-left mt-3">
+        <input required type="text" [(ngModel)]="length" name="length" class="form-control w-100"
+          (ngModelChange)="onTyping($event)" />
+      </div>
+
+
+      <h2 *ngIf="randomText === enteredText" class="text-center">Success!</h2>
+
+
+
+    </div>
+  </div>
+</div>

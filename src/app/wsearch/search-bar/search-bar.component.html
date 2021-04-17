@@ -1,0 +1,9 @@
+<form class="form" (ngSubmit)="onFormSubmit()">
+  <div class="form-group flex-column text-left">
+    <label>
+      <span class="font-14 text-dark-grey">What you wanna know?</span>
+    </label>
+    <input required type="text" (ngModelChange)="onSearch($event)" [(ngModel)]="term" name="term"
+      class="form-control w-100" />
+  </div>
+</form>

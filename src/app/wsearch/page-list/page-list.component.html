@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width:20%">Title</th>
+      <th style="width:20%">Word Count</th>
+      <th style="width:60%">Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let page of pages">
+      <td>
+        <a [href]="'https://en.wikipedia.org?curid=' + page.pageid" target="_blank">
+          {{ page.title }}
+        </a>
+      </td>
+      <td>{{ page.wordcount }}</td>
+      <td [innerHTML]="page.snippet"></td>
+    </tr>
+  </tbody>
+</table>

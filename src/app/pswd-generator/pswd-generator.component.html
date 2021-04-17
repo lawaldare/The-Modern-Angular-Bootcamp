@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+      <h1 class="text-center">Password Generator</h1>
+      <form #pwForm="ngForm" class="form" (ngSubmit)="generatePassword(pwForm)">
+        <div class="form-group flex-column text-left">
+          <label>
+            <span class="font-14 text-dark-grey">Enter length of the password</span>
+          </label>
+          <input required type="number" [(ngModel)]="length" name="length" class="form-control w-100" />
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="defaultCheck1" [(ngModel)]="useLetters" name="useLetters">
+          <label class="form-check-label" for="defaultCheck1">
+            Use letters
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="defaultCheck2" [(ngModel)]="useNumbers" name="useNumbers">
+          <label class="form-check-label" for="defaultCheck2">
+            Use numbers
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="defaultCheck3" [(ngModel)]="useSymbols" name="useSymbols">
+          <label class="form-check-label" for="defaultCheck3">
+            Use symbols
+          </label>
+        </div>
+        <button class="btn btn-primary btn-block my-3" type="submit">Generate!</button>
+      </form>
+
+      <div class="form-group flex-column text-left" *ngIf="showPassword">
+        <label for="salary">
+          <span class="font-14 text-dark-grey">Your generated password</span>
+        </label>
+        <input type="text" [(ngModel)]="password" name="password" class="form-control w-100" readonly />
+      </div>
+    </div>
+  </div>
+</div>
